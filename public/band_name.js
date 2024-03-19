@@ -23,7 +23,10 @@ app.get('/', (req, res) => {
     //console.log(req.body);
 });
 app.post('/submit', (req, res) => {
-    res.send(bandname);
+    if(bandname == 'ab')
+    res.sendFile(__dirname+'/result.html');
+    else
+    res.sendFile(__dirname+'/incorrect_password.html')
 });
 app.listen(3000, () => {
     console.log('listening on port 3000');
